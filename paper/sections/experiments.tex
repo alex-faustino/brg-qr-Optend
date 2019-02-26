@@ -1,0 +1,25 @@
+
+To determine the effectiveness of a trajectory, $\mathscr{T}_c$ we empirically compare the time it takes to deplete 1 Ah of charge while flying $\mathscr{T}_c$ versus the time it takes to deplete the same charge at hover. The experiment consists of two main phases: hover flights and trajectory flights where these two phases are flown by the same quadrotor alternately. The parameters defining $\mathscr{T}_c$ (i.e. $v_Q$, $R_t$, type of yaw tracking) vary between iterations while hover parameters remain unchanged. Each iteration begins by replacing the used battery with a fully charged one and determining if local wind speeds are below moderate which we define below. The experiments were designed this way to control for two primary factors, wind and battery variations.
+
+\subsection{Controlling for wind variations}
+From equations [eqno?] and decades of aerodynamic research we know that aircraft performance is susceptible to wind disturbances. Extensive work has been done in flight control to reduce wind induced error in the absence of a human pilot. \cite{escareno2013trajectory} and \cite{waslander2009wind} focus on the quadrotor platform while \cite{mcgee2006path} looks at the more traditional fixed-wing aircraft.
+In \cite{escareno2013trajectory} and \cite{mcgee2006path} wind disturbance is categorized by 
+\begin{equation}
+    W = \frac{\lvert V_w \rvert}{\lvert V_Q \rvert}*100\%
+\end{equation}
+As stated in section \ref{derivations}, in this paper we are not concerned with controlling against moderate or severe wind disturbance. Therefore, before each flight test we measure the local wind speed to ensure $W<20\%$ or below moderate conditions.
+
+\subsection{Mitigating battery issues}
+
+
+\subsection{Quadrotor platform}
+For this experiment we flew the DJI Matrice 100 built to the specifications provided by \cite{sa2018dynamic}. With the exception that we use the Optor visual inertial sensor instead of the discontinued Intel ZR300. All modifications made to their ROS package is available at \textbf{LINK TO GIT}.
+
+\subsection{Measuring consumption}
+The DJI SDK reports battery voltage, SoC, and capacity at 10Hz. This was a major reason for selecting this platform as there is no need for additional boards or modules.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=8cm]{placeholder-image.jpg}
+	\caption{Graphic detailing setup.}
+\end{figure}
