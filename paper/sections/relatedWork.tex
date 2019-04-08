@@ -1,4 +1,3 @@
-
 \subsection{Rotorcraft Flight Mechanics}
 The bulk of our work is supported by the momentum analysis methods derived by \cite{leishman2006principles}. These methods provide closed form, non-dimensional expressions for a rotorcraft's power required to maintain straight level flight \eqref{nondLevelFlightEqn} (excluding the unnecessary term for tail rotor power) and power required to maintain a constant, level turn \eqref{nondConstTurnEqn} where $\phi$ is the bank angle.
 
@@ -13,10 +12,13 @@ The bulk of our work is supported by the momentum analysis methods derived by \c
 We simplify equations \ref{nondLevelFlightEqn} and \ref{nondConstTurnEqn} to dimensioned versions specific to our quadrotor using empirical values for $K$ and $k$. \textbf{NEED TO VERIFY THAT THESE HOLD AT SCALE}. These equations are covered in more detail in Section \ref{flightMechSec}.
 
 \subsection{Drone Trajectory Optimization and Control}
-Biggest difference between the majority of quadrotor work is that wind is treated as a disturbance that needs to be rejected\cite{waslander2009wind}. Our work lays the foundation for using wind disturbance as an "energy source" similar to autonomous water vehicles.
+Similar experiments to ours were conducted by \cite{di2015energy}. However, there are three key differences. (1) Their model for $P_{req}$ is data driven rather than physics based. (2) Their experiments consist of straight and level flight at different velocities and distances rather than orbits. (3) Their model is piecewise rather than continuous. Our physics based approach produces a continuous $P_{req}$ function for all level flight conditions. 
+
+Our approach to modeling is more similar to \cite{zeng2017energy}. Here the power required to maintain level flight is used to find optimal trajectories for UAV being used as nodes in wireless communication system. They find trajectories where the power consumed by the UAV's communication components normalized by the power required to fly the trajectory is minimized. Our work differs in that we consider rotorcraft instead of fixed wing UAV and provide empirical verification.
+
+\textbf{Paragraph about controls and distrubance rejection.} Biggest difference between the majority of quadrotor work is that wind is treated as a disturbance that needs to be rejected\cite{waslander2009wind}. Our work lays the foundation for using wind disturbance as an "energy source" similar to autonomous water vehicles.
 
 \subsection{Dynamic Soaring}
 In similar spirit to our work is the climbing strategies proposed by \cite{zhao2017optimal}. They propose exploiting certain wind conditions to improve the efficiency of rotor vehicles most inefficient maneuver. Combined with our work the majority of common quadrotor mission trajectories can be created piece-wise efficiently.
 
-\subsection{Electric Vehicles}
 
