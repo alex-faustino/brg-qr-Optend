@@ -27,11 +27,11 @@
 \usepackage[mathscr]{euscript}
 
 \title{\LARGE \bf
-Optimal Control of Quadrotor UAVs in Three Wind Domains
+Power Minimal Optimal Control for Quadrotor UAVs in SE(3)
 }
 
 
-\author{Alexander B. Faustino, Julian Carter, Joshua Yuan, Jacob Hawkins, Abhay Patel and Timothy Bretl% <-this % stops a space
+\author{Alexander B. Faustino, TBD, and Timothy Bretl% <-this % stops a space
 	\thanks{The authors are with the Department of Aerospace Engineering, Coordinated Science Laboratory, 
 		University of Illinois at Urbana-Champaign, Champaign, IL 61801, USA
 		\tt\small \{afausti2, tbretl\}@illinois.edu}%
@@ -50,20 +50,27 @@ Optimal Control of Quadrotor UAVs in Three Wind Domains
 \input{sections/abstract}
 
 \section{INTRODUCTION}
+\label{intro}
 \input{sections/intro}
 
 \section{Related Work}
+\label{related}
 \input{sections/relatedWork}
 
-\section{Flight Mechanic Preliminaries}
-\label{flightMechSec}
-\label{derivations}
-\input{sections/powerReqLevelTurn}
+\section{Quadrotor and Power Model}
+\label{model}
+\input{sections/dynamicModel}
 
-\section{Experiments}
-\input{sections/experiments}
+\section{Optimal Control Problem}
+\label{formulation}
+\input{sections/problemFormulation.tex}
 
-\section{CONCLUSIONS}
+\section{Results and Discussion}
+\label{results}
+\input{sections/results}
+
+\section{Conclusions and Future Work}
+\label{conclusion}
 \input{sections/conclusions}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,9 +78,9 @@ Optimal Control of Quadrotor UAVs in Three Wind Domains
 %\addtolength{\textheight}{-12cm}   % needs to be before last page to work
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{APPENDIX}
+%\section*{APPENDIX}
 
-Appendixes should appear before the acknowledgment.
+%Appendixes should appear before the acknowledgment.
 
 \section*{ACKNOWLEDGMENT}
 
