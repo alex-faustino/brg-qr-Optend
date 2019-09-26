@@ -1,0 +1,20 @@
+
+\subsection{Existing white box models}
+White box models for quadrotor power consumption are derived from theoretical models for general rotorcraft, mainly presented by Leishman \cite{leishman2006principles}. Leishman's full model has aerodynamic power required for a steady maneuver equivalent to the sum of induced power, parasitic power, profile power, and power required to climb. Aerodynamic power is then scaled by an efficiency factor to convert to electrical power consumed. The individual power terms can be approximated, simplified, or assumed negligible to reduce model complexity. Which of these terms is included and how they are simplified is the main difference between the existing white box models implemented specifically for quadrotors. 
+
+A nearly comprehensive model for power consumption is given by Liu et al. \cite{liu2017power}. Their model contains three of the four terms from Leishman's model relevant to quadrotors: induced, profile, and parasitic, while neglecting the power required to climb. Somewhat similar to the black box models, their model requires initially collecting flight data to numerically determine seven constants. Their model is validated by flying a known trajectory and comparing the estimate of power to the actual power measured onboard. Our experiments are a natural extension to this validation, as we fly similar trajectories with more parameter variation. What differs is that we analyze how the individual terms contribute to the estimate's accuracy rather than just determining the accuracy.
+
+In \cite{bangura2012nonlinear} Bangura and Mahony present a model for mechanical power produced by the rotors as the integral part of their nonlinear dynamic model. They draw on the previous work by \cite{leishman2006principles} and \cite{hoffmann2007quadrotor} to derive a model that more accurately depicts the relationship between the rotors' mechanical and aerodynamic characteristics and the dynamics of the whole body during aggressive maneuvers. While this model has seen success in implementation, the traditional thrust-and-torque-based nonlinear model is still the most prevalently implemented.
+
+\subsection{Trajectory optimization}
+Ware and Roy \cite{ware2016analysis} incorporate urban wind data to find more efficient trajectories between two points in the urban canopy layer. Using the wind's prevailing speed and direction above the surrounding buildings as the input to a CFD solver, they generate a grid with 1 m resolution. Similar to \cite{di2015energy} they create a graph for a fixed altitude such that each interior node has eight edges. Using the wind vector, $v_w$, from the CFD solution, they can then choose an upper and lower bounded ground velocity, $v_g$, for the quadrotor such that it minimizes:
+\begin{align*}
+E_i = \frac{T(v_i + v_\infty \sin{\alpha}) (v_g - v_w) \|d\|}{v_g}
+\end{align*}
+where $\|d\|$ is the Euclidean distance between the two nodes. They address the acceleration problem encountered by \cite{di2015energy} by constraining the change in velocity, $\Delta v_g$, between edges. Their simulation results show that wind aware planning uses less power than wind naive planning and highlights the importance of having an estimate of the local wind field. We see in the expression for energy consumption that they are only using the dragless model or $P_{ind}$ to minimize power along an edge. We show in Section \ref{sec:Results} that including more terms in their power model, specifically a term for parasitic power, could improve their results.
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
+
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
+
+\IEEEoverridecommandlockouts
+
+\overrideIEEEmargins                                      % Needed to meet printer requirements.
+
+%In case you encounter the following error:
+%Error 1010 The PDF file may be corrupt (unable to open PDF file) OR
+%Error 1000 An error occurred while parsing a contents stream. Unable to analyze the PDF file.
+%This is a known problem with pdfLaTeX conversion filter. The file cannot be opened with acrobat reader
+%Please use one of the alternatives below to circumvent this error by uncommenting one or the other
+%\pdfobjcompresslevel=0
+%\pdfminorversion=4
+
+% The following packages can be found on http:\\www.ctan.org
+%\usepackage{natbib}
+\usepackage{graphicx} % for pdf, bitmapped graphics files
+\graphicspath{ {images/} }
+%\usepackage{epsfig} % for postscript graphics files
+\usepackage{mathptmx} % assumes new font selection scheme installed
+\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage[mathscr]{euscript}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+%MACROS
+\newcommand{\vinf}{v_{\infty}}
+
+\newcommand{\Body}[1]{#1^B}
+\newcommand{\World}[1]{#1^W}
+\newcommand{\Vect}[1]{\boldsymbol{#1}}
+
+\title{\LARGE \bf
+A Model of Quadrotor UAV Power Consumption and Its Performance Across a Range of Flight Conditions
+}
+
+
+\author{Alexander B. Faustino, Joshua Y Yuan, Julian Carter, Jacob Hawkins, Abhay Patel and Timothy Bretl% <-this % stops a space
+	\thanks{The authors are with the Department of Aerospace Engineering and Coordinated Science Laboratory, 
+		University of Illinois at Urbana-Champaign, Urbana, IL 61801, USA
+		\tt\small \{afausti2, jyyuan2, julianc2, jacobrh3, abhaysp2, tbretl\}@illinois.edu}%
+}
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{sections/abstract}
+
+\section{INTRODUCTION}
+\label{sec:Intro}
+\input{sections/intro}
+
+\section{Related Work}
+\label{sec:Related}
+\input{sections/relatedWork}
+
+\section{Quadrotor Dynamic Model}
+\label{sec:Dynamics}
+\input{sections/dynamicModel}
+
+\section{Power Consumption Model}
+\label{sec:Power}
+\input{sections/powerModel}
+
+\section{Experiments}
+\label{sec:Exp}
+\input{sections/experiments}
+
+\section{Results and Discussion}
+\label{sec:Results}
+\input{sections/conclusions}
+
+\section{Conclusion and Future Work}
+\label{sec:Future}
+\input{sections/futureWork}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\addtolength{\textheight}{-12cm}   % needs to be before last page to work
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{ACKNOWLEDGMENTS}
+
+The authors would like to thank the Champaign County Radio Control Club for allowing us full use of their facilities and equipment. 
+
+\bibliographystyle{IEEEtran}
+\bibliography{sections/references}
+
+\end{document}
