@@ -1,3 +1,16 @@
+# working folders
+optimalAltitude/
+windFieldEstimation/
+
+# word drafts
+*.docx
+
+# figure drafts
+*.pptx
+
+# dji files
+*.DAT
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
