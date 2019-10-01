@@ -22,7 +22,7 @@ Repo containing the work done by the Bretl Research Group regarding optimizing a
 All [flight data](https://uofi.box.com/s/a4txbrat98d1x69ixinvw7npknffqtjm) is available for download.
 
 ---
-### Bretl Research Group
+### [Bretl Research Group](http://bretl.csl.illinois.edu/)
 ### Coordinated Science Lab and Aerospace Engineering
 ### University of Illinois at Urbana-Champaign
 ---
